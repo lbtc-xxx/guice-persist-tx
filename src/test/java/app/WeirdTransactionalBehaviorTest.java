@@ -46,7 +46,6 @@ public class WeirdTransactionalBehaviorTest {
 
     @After
     public void checkInserted() {
-        final EntityManager em = injector.getInstance(EntityManager.class);
         final MyEntity myEntity = em.find(MyEntity.class, PRIMARY_KEY);
         em.refresh(myEntity);
 
