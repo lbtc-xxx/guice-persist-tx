@@ -23,7 +23,7 @@ public class WeirdTransactionalBehaviorTest {
     static EntityManager em;
 
     Injector injector = Guice.createInjector(new MyModule());
-    MyEntity myEntity = new MyEntity(1);
+    MyEntity myEntity = new MyEntity(PRIMARY_KEY);
 
     @Before
     public void init() {
