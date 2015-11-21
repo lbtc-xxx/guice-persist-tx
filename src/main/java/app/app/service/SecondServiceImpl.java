@@ -1,20 +1,21 @@
 package app.app.service;
 
-
 import app.entity.MyEntity;
 
 import javax.inject.Inject;
+import javax.persistence.EntityManager;
 
 public class SecondServiceImpl {
-
-    private final ThirdServiceImpl thirdService;
+    private final EntityManager em;
 
     @Inject
-    public SecondServiceImpl(final ThirdServiceImpl thirdService) {
-        this.thirdService = thirdService;
+    public SecondServiceImpl(final EntityManager em) {
+        this.em = em;
     }
 
+    // This make both tests work but I can't put @Transactional here for the code at job! :(
+    // @com.google.inject.persist.Transactional
     public void secondSave(final MyEntity myEntity) {
-        thirdService.thirdSave(myEntity);
+        em.persist(myEntity);
     }
 }

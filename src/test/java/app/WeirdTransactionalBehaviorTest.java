@@ -31,14 +31,14 @@ public class WeirdTransactionalBehaviorTest {
     }
 
     @Test
-    public void shouldBeInsertedWhenInstanceAcquiredByInterface() {
+    public void shouldBeInsertedForInstanceProducedByProvideMethod() {
         final FirstService sut = injector.getInstance(FirstService.class);
 
         sut.firstSave(myEntity);
     }
 
     @Test
-    public void shouldBeInsertedWhenInstanceAcquiredByImplementation() {
+    public void shouldBeInsertedWhenInstanceProducedImplicitly() {
         final FirstService sut = injector.getInstance(FirstServiceImpl.class);
 
         sut.firstSave(myEntity);
@@ -60,14 +60,14 @@ public class WeirdTransactionalBehaviorTest {
     }
 
     @AfterClass
-    public static void afterClass(){
+    public static void afterClass() {
         em.close();
         emf.close();
     }
 
     @Before
     public void cleanTable() {
-        System.out.println(getClass() + ": Cleaning the table before every test begins...");
+        System.out.println(getClass() + ": cleaning the table before every test begins...");
         em.getTransaction().begin();
         em.createQuery("DELETE FROM MyEntity").executeUpdate();
         em.getTransaction().commit();
