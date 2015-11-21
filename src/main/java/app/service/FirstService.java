@@ -1,4 +1,4 @@
-package app.app.service;
+package app.service;
 
 import app.entity.MyEntity;
 

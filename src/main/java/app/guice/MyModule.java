@@ -1,8 +1,8 @@
 package app.guice;
 
-import app.app.service.FirstService;
-import app.app.service.FirstServiceImpl;
-import app.app.service.SecondServiceImpl;
+import app.service.FirstService;
+import app.service.FirstServiceImpl;
+import app.service.SecondServiceImpl;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import com.google.inject.persist.jpa.JpaPersistModule;

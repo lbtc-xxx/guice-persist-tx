@@ -1,7 +1,7 @@
 package app;
 
-import app.app.service.FirstService;
-import app.app.service.FirstServiceImpl;
+import app.service.FirstService;
+import app.service.FirstServiceImpl;
 import app.entity.MyEntity;
 import app.guice.MyModule;
 import com.google.inject.Guice;
